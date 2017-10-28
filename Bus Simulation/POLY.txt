@@ -1,0 +1,47 @@
+Initialization();
+do
+{
+	Get the next event; //event = new queue()
+	
+	clock = event time;
+	switch event_kind
+	person:
+	{
+		update the queue[stop_number];
+		generate_event(person,stop_number,bus_number);
+	}
+	arrival:
+	{
+		if(queue[stop_number] == 0){
+			generate_event()//arrival event at next stop at clock+drive_time
+		}else{
+			generate_event()//boarder event at this stop at clock
+		}
+	}
+	boarder:
+	{
+		if(queue[stop_number] == 0){
+			generate_event()//arrival event at next bus stop at clock+drive_time
+		}else{
+			generate_event()//boarder event at clock+boarding_time
+		}
+	}
+}while clock <= stop_time
+	
+	
+	
+/*	时间线为一个priority queue，根据时间顺序插入、按照时间顺序依次执行。
+	1.通过循环不停生成Person事件、在不同站台中生成人、往queue里面安装随机时间不停插入更新event
+	2.bus的移动产生arrival和boarder事件
+	3.全局变量carPosition waitPersion 通过clock变量从queue里面调用不同的event，通过switch调用不同的event函数
+	  用event函数来操作全局变量体现程序的运行结果。
+*/
+
+
+
+
+
+	//修改busPosition[]
+	
+
+	//给Bus设定flag 按照初始位置ABCDE设置优先级，每移动一步优先级加一
